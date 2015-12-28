@@ -1,0 +1,23 @@
+##################################################################################
+# OTPHP
+# An object-oriented one-time password (OTP) authentication library written in PHP
+##################################################################################
+
+Testing
+=======
+
+OTPHP comes with two PHPUnit unit tests to validate functionality of the OTPServer and the ClientEntity.
+
+To run these tests:
+
+1. Install PHPUnit
+2. Install OTPHP via the installation script
+3. Copy the two tests into the root directory of the OTPHP installation
+4. Run the tests from the command line using the phpunit command
+
+
+See Also
+========
+
+README.md	- General package information
+INSTALL		- Installation documentation

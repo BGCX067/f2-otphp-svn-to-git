@@ -1,0 +1,43 @@
+##################################################################################
+# OTPHP
+# An object-oriented one-time password (OTP) authentication library written in PHP
+##################################################################################
+
+Installation
+============
+
+OTPHP comes with an installation script that will perform an interactive installation of the library and initialization of the server-side database in a directory of your choice.
+
+
+Configuration Defaults
+======================
+
+Install Location - ./OTPHP
+OTP Server database password - Generated
+OTP Server RSA key bit-length - 4096
+OTP password length - 10
+Auth fail lockout limit - 5
+Number of additional passwords tried for each failure (look-ahead) - 5
+
+
+Integration
+===========
+
+OTPHP at present uses an SQLite database to store client information on both the client and server side, using a different database engine should not present any problems but has not been tested.
+
+When a client is created, all files that must be copied to the client device to allow for integration on the client side are copied into a folder whose name is the new client's ID.
+This folder is created inside the client_data folder of the OTPHP installation.
+
+The server-side class accepts authentication requests via the authenticateClient() function.
+
+Authentication requests consist of the client ID and an OTP password, encrypted with the OTP server's public RSA key
+	-On the client side, these two variables are accessible via the the OTPClient member variables 's_Password' and 's_ID'
+
+See the AuthServer.php and AuthClient.php classes for a reference implementation of a socket-based network authentication client and server.
+
+
+See Also
+========
+
+README.md	- General package information
+TESTING		- Unit testing documentation
